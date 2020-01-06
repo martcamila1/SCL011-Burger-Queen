@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import json1 from '../../data.json'
 import ButtonMenu from './buttonmenu'
-import InputName from './input.js'
-import Combobox from './combobox.js'
+
 import db from '../../firebase'
 
 class MenuLunch extends Component{
@@ -92,8 +91,6 @@ clickBtn2=(productMenu)=>{
   render(){
     
     return <div> 
-      <Combobox/>
-      <InputName/>
       {this.state.json.map((element) => ( 
       <ButtonMenu key={element.id} clickBtn={this.clickBtn2} productProp={element} />
 

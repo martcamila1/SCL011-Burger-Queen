@@ -1,4 +1,41 @@
+.App {
+  font-family: Roboto;
+}
+
 .Waiter {
-  text-align: left;
   background-color: #343638;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.inputsContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btnsContainer {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menusContainer {
+  display: flex;
+  flex-flow: wrap column;
+}
+
+.burgerHeader {
+  background-color: #343638;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 22px;
+  margin-top: 10%;
+  margin-bottom: 6%;
 }
