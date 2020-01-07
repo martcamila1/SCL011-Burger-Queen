@@ -21,9 +21,9 @@ class Waiter extends Component{
       </div>
       <div className="btnsContainer">
         <Link to="/"><ButtonGeneric className="btnGeneric" name ="Desayuno"/></Link>
-       <Link to="/menualmuerzo"><ButtonGeneric name ="Almuerzo"/></Link>
+        <Link to="/menualmuerzo"><ButtonGeneric name ="Almuerzo"/></Link>
       </div>
-      <div className="menusContainer">
+      <div>
         <Route exact path="/" component={MenuBreakFast } />
         <Route exact path="/menualmuerzo" component={MenuLunch } />
       </div>

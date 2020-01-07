@@ -9,7 +9,7 @@ class ButtonMenu extends Component{
     render(){
       const { classes } = this.props;
       return  <div>
-        <Button variant="contained" className={classes.active} onClick={this.props.clickBtn.bind(this, this.props.productProp)}>{this.props.productProp.product}-{this.props.productProp.price}</Button>
+        <Button variant="contained" className={classes.active} onClick={this.props.clickBtn.bind(this, this.props.productProp)}>{this.props.productProp.product}<br/>{this.props.productProp.price}</Button>
     
       </div>
     }

@@ -90,11 +90,13 @@ clickBtn2=(productMenu)=>{
 
   render(){
     
-    return <div> 
+    return  <div className="menusContainer">
+    <div className="comandaContainer">
       {this.state.json.map((element) => ( 
       <ButtonMenu key={element.id} clickBtn={this.clickBtn2} productProp={element} />
-
       ))}
+      </div>
+    <div>
 
      {this.state.product.map((elementProduct,i)=> {return <div>
      <p key ={elementProduct.id}>{elementProduct.price}{elementProduct.product}</p>
@@ -102,9 +104,12 @@ clickBtn2=(productMenu)=>{
      </div>  
 
      })}
-   
+         <div>
+
      <p>{this.state.price[this.state.price.length - 1]}</p>
      <button onClick={()=>this.sendKitchen()}>Enviar</button>
+     </div>
+     </div>
      </div>
   }
 }
