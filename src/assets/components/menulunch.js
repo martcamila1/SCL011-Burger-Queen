@@ -49,46 +49,55 @@ class MenuLunch extends Component {
     })
 
     this.setState({
+
       product: removeProduct,
 
     })
-
-    let reducePrice = (this.state.price[this.state.price.length - 1] - price);
+  let reducePrice = (this.state.price[this.state.price.length - 1] - price);
     let statePrice = this.state.price
     statePrice.push(reducePrice)
 
     this.setState({
-      price: statePrice
+    price: statePrice
+    
+  })
+  
+} 
+  sendKitchen=()=>{
+    let date = new Date ()
+    let dateInit = date.getHours() + ":" + date.getMinutes() ; 
+  db.collection("orders").add({
+    productTotal: this.state.product,
+    totalOrderPrice: this.state.price[this.state.price.length - 1],
+    state: "pendiente",
+    dateCollection:dateInit,
+   
+  })
+  .then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+    alert("Pedido envaido a cocina")
+  })
+
+  .catch(function(error) {
+    console.error("Error adding document: ", error);
+    alert("Error al enviar, intentelo denuevo")
+  });
+     let productsFilter = this.state.product;
+     let priceFilter  =this.state.price
+
+     priceFilter=[]
+     productsFilter=[]
+     
+     this.setState({
+     product:productsFilter,
+     price:priceFilter
+
+
+  
     })
 
   }
-  sendKitchen = () => {
-    db.collection("orders").add({
-      productTotal: this.state.product,
-      totalOrderPrice: this.state.price[this.state.price.length - 1]
-
-    })
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        alert("Pedido envaido a cocina")
-      })
-
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-        alert("Error al enviar, intentelo denuevo")
-      });
-    let productsFilter = this.state.product;
-    let priceFilter = this.state.price
-
-    priceFilter = []
-    productsFilter = []
-
-    this.setState({
-      product: productsFilter,
-      price: priceFilter
-
-    })
-  }
+  
   render() {
     const { classes } = this.props;
     return <div className="menusContainer">
