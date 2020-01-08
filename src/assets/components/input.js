@@ -6,7 +6,7 @@ class InputName extends Component {
     render (){
         return (
         <div> 
-            <input onChange={this.props.onChange1} type="text" className= "inputName" id= "inputGeneric"  placeholder = "Nombre cliente" />
+            <input onChange={this.props.onChange1.bind(this)} type="text" className= "inputName" id= "inputGeneric"  placeholder = "Nombre cliente" />
         </div>
 
         );

@@ -12,9 +12,18 @@ class MenuBreakFast extends Component{
 
     json1:json1.Breakfast,
     price: [],
-    product: []
+    product: [],
+    name: ''
   }
 }
+
+handleInput= e => {
+  console.log(e.value)
+  this.setState({
+   name:e.value
+ })
+ }
+
 clickBtn2=(productMenu)=>{
    
   let productState = this.state.product;
@@ -93,7 +102,7 @@ sendKitchen=()=>{
     
     return <div>
       <Combobox/>
-      <InputName/>
+      <InputName onChange1={(e)=>this.handleInput(e.target)} />
       {this.state.json1.map((element) => (
       <ButtonMenu key={element.id} clickBtn={this.clickBtn2} productProp={element} />
 

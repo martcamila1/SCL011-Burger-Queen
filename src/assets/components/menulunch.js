@@ -18,8 +18,11 @@ class MenuLunch extends Component{
   }
 }
 
-handleInput=()=> {
- console.log('Esto debería ser un nombre')
+handleInput= e => {
+ console.log(e.value)
+ this.setState({
+  name:e.value
+})
 }
 
 clickBtn2=(productMenu)=>{
@@ -100,7 +103,7 @@ clickBtn2=(productMenu)=>{
     
     return <div> 
       <Combobox/>
-      <InputName onChange1={()=>this.handleInput} />
+      <InputName onChange1={(e)=>this.handleInput(e.target)} />
       {this.state.json.map((element) => ( 
       <ButtonMenu key={element.id} clickBtn={this.clickBtn2} productProp={element} />
 
