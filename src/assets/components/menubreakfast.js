@@ -14,6 +14,7 @@ class MenuBreakFast extends Component{
     price: [],
     product: []
   }
+  
 }
 clickBtn2=(productMenu)=>{
    
@@ -63,9 +64,15 @@ clickBtn2=(productMenu)=>{
   
 }
 sendKitchen=()=>{
+  let date = new Date ()
+  let dateInit = date.getHours() + ":" + date.getMinutes() ; 
   db.collection("orders").add({
+
     productTotal: this.state.product,
-    totalOrderPrice: this.state.price[this.state.price.length - 1]
+    totalOrderPrice: this.state.price[this.state.price.length - 1],
+    state: "pendiente",
+    date:new Date(),
+    dateCollection:dateInit,
    
   })
   .then(function(docRef) {
@@ -92,6 +99,7 @@ sendKitchen=()=>{
   render(){
     
     return <div>
+      
       <Combobox/>
       <InputName/>
       {this.state.json1.map((element) => (
