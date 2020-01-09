@@ -132,7 +132,6 @@ handleInput= e => {
           </div>
         })}
         <div className="sendKitchenContainer">
-          <Comments /><br />
           <p>Total ${this.state.price[this.state.price.length - 1]}</p>
           <Button variant="contained" className={classes.active} onClick={() => this.sendKitchen()}>Enviar a cocina</Button>
         </div>
